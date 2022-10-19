@@ -15,5 +15,13 @@ namespace CodingEventsDemo.ViewModels
 
         [EmailAddress]
         public string ContactEmail { get; set; }
+
+        [Required(ErrorMessage = "Location is required")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 20 characters")]
+        public string Location { get; set; }
+
+        [Required]
+        [Range(0, 100000)]
+        public string NumberOfAttendees { get; set; }
     }
 }

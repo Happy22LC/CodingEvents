@@ -13,14 +13,19 @@ namespace CodingEventsDemo.Models
 
         public int Id { get; }
         static private int nextId = 1;
+        //Add a property to collect information about where the event will take place.
+        public string Location { get; set; }
+        public int NumberOfAttendees { get; set; }
 
-        public Event(string name, string description, string contactEmail)
+        public Event(string name, string description, string contactEmail, string location, int numberOfAttendees)
         {
             Name = name;
             Description = description;
             ContactEmail = contactEmail;
             Id = nextId;
             nextId++;
+            Location = location;
+            NumberOfAttendees = numberOfAttendees;
         }
 
         public Event()
